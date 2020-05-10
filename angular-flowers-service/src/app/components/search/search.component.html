@@ -1,0 +1,14 @@
+<div class="form-header">
+    <input #searchInput type="text" 
+        class="au-input au-input-xl" 
+        placeholder="Search for ..." 
+        (keyup.enter)="doSearch(searchInput.value)" />
+    
+    <button (click)="doSearch(searchInput.value)" class="au-btn-submit" >
+      Search
+    </button> 
+   
+      <button routerLink="/base64-upload" class="au-btn-submit" >
+        Classify image
+      </button>
+</div>

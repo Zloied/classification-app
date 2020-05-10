@@ -1,0 +1,44 @@
+<div class="main-content">
+    <div class="detail-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div *ngIf="flower" class="col-md-3">
+                    <h1> Looks like : </h1>
+                    <div class="product-box">
+
+                        <a routerLink="/flowers/{{ flower.id }}">
+                            <img src="{{ flower.pictureUrl }}" class="detail-img">
+                        </a> <br>
+
+                        <a routerLink="/flowers/{{ flower.id }}">
+                            <h1>{{ flower.name }}</h1>
+                        </a>
+                        <br>
+                        <a href="#" class="primary-btn">Open</a>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="!flower" class="col-md-3">
+
+                <img src="assets/images/glass-flower.jpg" class="image-responive">
+            </div>
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="dragzone" (click)="fileInput.click()" appDragDropeDirective (onFileDropped)="onFileChange($event)">
+                    <label for="image"> To classife an image please make sure that your picture is focused on a single flower .</label>
+                    <br> <input hidden type="file" accept=".jpg,.png,.jpeg" id="image" (change)="onFileChange($event.target.files)"
+                        #fileInput>
+                                     
+                </div>
+                <button type="button" class="btn btn-light" (click)="clearFile()">Clear file <i class="fa fa-trash" aria-hidden="true"></i></button>
+                <br>
+                <br> 
+                <button type="submit" [disabled]="!imageData || !uploaded" class="btn btn-success">Submit <i
+                        class="fa fa-spinner fa-spin fa-fw" *ngIf="processing"></i></button>
+            </form>
+            <p *ngIf="className" >{{ className }}</p>
+            <p *ngIf="flower">{{  flower.name }} </p>
+        </div>
+    </div>
+</div>
