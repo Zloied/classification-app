@@ -49,8 +49,8 @@ public class Inference {
 
 	private List<String> classes =  Arrays.asList(DecodingUtils.getPropertyByName("output.classes").split(", ")); 
 
-	private static String MODEL_PATH;// = "build/model";
-	private static String MODEL_NAME; // = "flower-recognition_v1";
+	private static String MODEL_PATH;
+	private static String MODEL_NAME;
 
 	private static Translator<BufferedImage, Classifications> translator;
 

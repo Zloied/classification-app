@@ -15,10 +15,12 @@ import com.vais.imageclassification.utils.DecodingUtils;
 public class ClassificationServiceApplication {
 	
 
-	private final static String origin = "http://localhost:4200";
+	private final static String origin = DecodingUtils.getPropertyByName("origin.url");
 
 	public static void main(String[] args) {
+		
 		Inference inference = new Inference();
+		
 		post("/classification", (request, response) -> {
 			response.type("application/json");
 			
