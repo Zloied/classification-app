@@ -30,7 +30,7 @@ import ai.djl.translate.Translator;
 import ai.djl.translate.TranslatorContext;
 
 /**
- * 
+ * Used as for processing images through loaded model and retrieves classification outcome for the provided image.
  * @author Eduard
  *
  */
@@ -66,14 +66,13 @@ public class Inference {
 	
 	public Inference()  {
 
-		Inference.translator = new ImageTranslator();
-		
+		Inference.translator = new ImageTranslator();		
 		Inference.model = Models.getResnetModel(NUM_OF_OUTPUT, HEIGHT, WIDTH);
+		
 		try {
-			System.out.println("Model Path " + MODEL_PATH);
 			Inference.model.load(Paths.get(MODEL_PATH), MODEL_NAME);
-		} catch (MalformedModelException|IOException e) {
 			
+		} catch (MalformedModelException|IOException e) {
 			logger.error("Error loading model.", e);
 		}
 		 
@@ -91,8 +90,7 @@ public class Inference {
 	public Classifications predict(BufferedImage img) throws IOException, ModelException, TranslateException {
 
 		Classifications predictResult;
-		
-			Translator<BufferedImage, Classifications> translator = new ImageTranslator();
+					
 			try (Predictor<BufferedImage, Classifications> predictor = model.newPredictor(translator)) {
 				predictResult = predictor.predict(img);
 			}
@@ -106,8 +104,6 @@ public class Inference {
 	 *
 	 */
 	private final class ImageTranslator implements Translator<BufferedImage, Classifications> {
-
-		// private List<String> classes;
 
 		@Override
 		public NDList processInput(TranslatorContext ctx, BufferedImage input) {
