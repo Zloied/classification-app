@@ -4,5 +4,5 @@
 
 ### Application consistis from multiple projects:
  * Angular 9 project for FE layer.
- * Spark Rest service to classife images with Neural Networ build on DJL (Deep Java Library).
+ * Spark Rest service to classife images with Neural Network build on DJL (Deep Java Library).
  * Spring Boot Rest sercvice to retrieve data from database build with JPA/Hibernate. 
