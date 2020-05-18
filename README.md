@@ -1,4 +1,4 @@
-### Flower knowledge base application with option to recognize a flower image and retrieve information based on the outcome . 
+### Flower knowledge base application with an option to recognize a flower image and retrieve information based on the outcome. 
 
  Web application based of Angular FE, Spark and Spring Boot as back-end.
 
