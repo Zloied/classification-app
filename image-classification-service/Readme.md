@@ -1,3 +1,3 @@
 ### Lightweight spark REST service build on top of amazon's DJL (Deep Java Library).
-Proccess recieved images through pretrained Neural Network Model for image classification. 
-Sends best matches as outcome.   
+Process recieved images through pre-trained Neural Network Model for image classification. 
+Sends best matches as an outcome.   
