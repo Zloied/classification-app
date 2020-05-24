@@ -1,0 +1,16 @@
+server:
+  port: 8083
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+
+keycloak:
+  server:
+    adminUser:
+      username: vais-admin
+      password: pass    
+    contextPath: /auth
+    realmImportFile: vais-realm.json
+    
+    
