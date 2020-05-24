@@ -1,1 +1,1 @@
- * Spring Boot OAuth2 service build on embedded keycloak server
+ Spring Boot OAuth2 resource service build on embedded keycloak server
